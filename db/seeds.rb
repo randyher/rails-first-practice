@@ -6,6 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+CatSitter.destroy_all
+Cat.destroy_all
+
+CatSitter.reset_pk_sequence
+Cat.reset_pk_sequence
+
 one = CatSitter.create(name: "Jon", age: 26)
 two = CatSitter.create(name: "Dany", age: 22)
 three = CatSitter.create(name: "Robert", age: 25)
