@@ -1,0 +1,2 @@
+class CatSitter < ApplicationRecord
+end
