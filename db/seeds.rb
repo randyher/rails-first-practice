@@ -9,8 +9,8 @@
 CatSitter.destroy_all
 Cat.destroy_all
 
-CatSitter.reset_pk_sequence
-Cat.reset_pk_sequence
+ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'cats'")
+ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'cat_sitters'")
 
 one = CatSitter.create(name: "Jon", age: 26)
 two = CatSitter.create(name: "Dany", age: 22)
